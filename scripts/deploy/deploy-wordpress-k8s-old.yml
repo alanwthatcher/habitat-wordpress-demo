@@ -22,7 +22,7 @@ metadata:
 customVersion: v1beta2
 spec:
   v1beta2:
-    image: alan6habitatregistry.azurecr.io/alan/mysql:latest
+    image: alanwthatcher/mysql:5.7.17
     count: 1
     service:
       name: mysql
@@ -39,7 +39,7 @@ metadata:
 customVersion: v1beta2
 spec:
   v1beta2:
-    image: alan6habitatregistry.azurecr.io/alan/wordpress:4.9.5
+    image: alanwthatcher/wordpress:4.9.9
     count: 1
     service:
       name: wordpress
