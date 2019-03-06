@@ -12,6 +12,15 @@ data:
   #   bind='0.0.0.0'
   user.toml: YXBwX3VzZXJuYW1lPSJ3b3JkcHJlc3MiCmFwcF9wYXNzd29yZD0iVGhpc0lzU2VjcmV0IgphcHBfZGF0YWJhc2U9IndvcmRwcmVzcyIKYmluZD0nMC4wLjAuMCcK
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: wordpress-user-toml
+type: Opaque
+data:
+  # nodbrestore = 'true'
+  user.toml: bm9kYnJlc3RvcmUgPSAndHJ1ZSc=
+---
 apiVersion: habitat.sh/v1beta1
 kind: Habitat
 metadata:
@@ -44,6 +53,7 @@ spec:
     service:
       name: wordpress
       topology: standalone
+      configSecretName: wordpress-user-toml
       bind:
         - name: database
           service: mysql
